@@ -35,7 +35,7 @@ public class MybatisPluginCodeGenerate {
      * 如果没有模块就直接写表名
      * </p>
      */
-    private static final String[] TABLES = {"article"};
+    private static final String[] TABLES = {"mongo_article", "mongo_article_answer"};
 
     // =========================== 包相关 ================================
 
