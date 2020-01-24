@@ -1,11 +1,11 @@
 package com.xh.mongodb.java;
 
 import com.mongodb.ConnectionString;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import com.mongodb.MongoClientSettings;
 import org.apache.commons.lang3.StringUtils;
+import org.bson.Document;
+import org.bson.conversions.Bson;
 
 /**
  * OperationMongo
@@ -18,27 +18,50 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class OperationMongo {
 
+    private MongoCollection<Document> collection;
+
     public OperationMongo() {
-        init("test");
+        init("test", "test");
     }
 
-    public OperationMongo(String dbName) {
-        init(dbName);
+    public OperationMongo(String dbName, String collectionName) {
+        init(dbName, collectionName);
     }
 
-    private void init(String dbName) {
+    private void init(String dbName, String collectionName) {
         if (StringUtils.isBlank(dbName)) {
             throw new IllegalArgumentException("dbName is empty.");
         }
-        ConnectionString connString = new ConnectionString(
-                "mongodb+srv://<username>:<password>@<cluster-address>/test?w=majority"
-        );
+        if (StringUtils.isBlank(collectionName)) {
+            throw new IllegalArgumentException("collectionName is empty.");
+        }
+        // 连接字符串没有加上 db 会出现以下错误 : The connection string contains options without trailing slash
+        ConnectionString connString = new ConnectionString("mongodb://47.98.142.170:28017/" + dbName + "?w=majority");
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(connString)
                 .retryWrites(true)
                 .build();
         MongoClient mongoClient = MongoClients.create(settings);
-        MongoDatabase database = mongoClient.getDatabase(dbName);
+        MongoDatabase mongoDatabase = mongoClient.getDatabase(dbName);
+        this.collection = mongoDatabase.getCollection(collectionName);
+
+        System.out.println(collectionName);
+    }
+
+    public FindIterable<Document> find(Document document) {
+        return this.collection.find(document);
+    }
+
+    public void add(Document document) {
+        this.collection.insertOne(document);
+    }
+
+    public void update(Bson filter, Bson update) {
+        this.collection.updateMany(filter, update);
+    }
+
+    public void delete(Bson filter) {
+        this.collection.deleteOne(filter);
     }
 
 

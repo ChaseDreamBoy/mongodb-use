@@ -92,5 +92,12 @@ db
 show dbs
 
 # 选择一个数据库(这里选择 test 数据库 )
-use test
+use test;
+
+# 显示所有的集合
+show collections;
+
+# 使用 find 查询文档
+db.test.find().pretty()
+
 ```
