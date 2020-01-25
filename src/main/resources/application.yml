@@ -11,6 +11,8 @@ logging:
     root: warn
     org:
       springframework:
+        data: 
+          mongodb: DEBUG
         web: warn
       hibernate: warn
     com:
@@ -21,6 +23,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: accp
+  data:
+    mongodb:
+      host: 47.98.142.170
+      port: 28017
+      database: dream
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

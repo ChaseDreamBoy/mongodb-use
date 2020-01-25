@@ -32,3 +32,7 @@
 # java 操作 mongo 实现 crud 
 
 代码 : [src/main/java/com/xh/mongodb/java/ArticleJavaMongoOperation.java](https://github.com/ChaseDreamBoy/mongodb-use/blob/master/src/main/java/com/xh/mongodb/java/ArticleJavaMongoOperation.java)
+
+# java 同步 mysql 数据到 mongodb
+
+代码 : [src/test/java/com/xh/mongodb/sync/SimpleSyncTest.java](https://github.com/ChaseDreamBoy/mongodb-use/blob/master/src/test/java/com/xh/mongodb/sync/SimpleSyncTest.java)
