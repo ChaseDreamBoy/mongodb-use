@@ -26,7 +26,7 @@
         <commons.lang3.version>3.9</commons.lang3.version>
         <commons.collections4.version>4.4</commons.collections4.version>
         <commons.beanutils.version>1.9.4</commons.beanutils.version>
-        <jsoup.version>1.12.1</jsoup.version>
+        <jsoup.version>1.15.3</jsoup.version>
     </properties>
 
     <dependencies>
