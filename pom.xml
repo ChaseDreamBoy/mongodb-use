@@ -23,7 +23,7 @@
         <mysql.version>5.1.48</mysql.version>
         <freemarker.version>2.3.29</freemarker.version>
         <okhttp.version>2.7.5</okhttp.version>
-        <commons.lang3.version>3.9</commons.lang3.version>
+        <commons.lang3.version>3.18.0</commons.lang3.version>
         <commons.collections4.version>4.4</commons.collections4.version>
         <commons.beanutils.version>1.9.4</commons.beanutils.version>
         <jsoup.version>1.12.1</jsoup.version>
