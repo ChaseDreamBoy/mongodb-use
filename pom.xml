@@ -25,7 +25,7 @@
         <okhttp.version>2.7.5</okhttp.version>
         <commons.lang3.version>3.9</commons.lang3.version>
         <commons.collections4.version>4.4</commons.collections4.version>
-        <commons.beanutils.version>1.9.4</commons.beanutils.version>
+        <commons.beanutils.version>1.11.0</commons.beanutils.version>
         <jsoup.version>1.12.1</jsoup.version>
     </properties>
 
